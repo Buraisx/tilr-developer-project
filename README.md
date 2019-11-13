@@ -6,7 +6,10 @@ Running on `Rails 5.1.7`
   - macs: `brew install sqlite3`
 
 # POPULATING THE DATABASE
+- `rails db:seed`
+- `rails db:migrate`
 
+- `bundle install`
 
 # EXTERNAL SERVICES USED
 - Carrierwave

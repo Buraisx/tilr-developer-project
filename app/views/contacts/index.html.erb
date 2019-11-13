@@ -1,0 +1,50 @@
+<header class="row">
+  <%= form_tag( new_contact_path, class: "form-inline col-10") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search based on name, email, phone number, or group", class: "form-control" %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to 'Add new contact', new_contact_path, class: "btn btn-outline-success" %>
+</header>
+<main class="row">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="col">Avatar</th>
+        <th scope="col">First Name:</th>
+        <th scope="col">Last Name:</th>
+        <th scope="col" class="mobile-hidden">Email:</th>
+        <th scope="col">Phone Number:</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td class="table__avatar-container">
+            <% if contact.avatar.present? == true %>
+              <%= image_tag contact.avatar, alt: "contact's portrait", class: "img-fluid" %>
+            <% else %>
+              <%= image_tag '/assets/avatar-placeholder.png', class: "img-fluid" %>
+            <% end %>
+          </td>
+          <td>
+            <p><%= contact.first_name%></p>
+          </td>
+          <td>
+            <p><%= contact.last_name%></p>
+          </td>
+          <td class="mobile-hidden">
+            <p><%= contact.email%></p>
+          </td>
+          <td>
+            <p><%= contact.phone_number%></p>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_contact_path(contact), class: "table__button btn btn-outline-secondary" %>
+            <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "table__button btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>
