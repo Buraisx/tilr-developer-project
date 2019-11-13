@@ -1,0 +1,38 @@
+<main class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Avatar</th>
+        <th scope="col">First Name:</th>
+        <th scope="col">Last Name:</th>
+        <th scope="col">Email:</th>
+        <th scope="col">Phone Number:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td>
+            <% if contact.avatar.present? == true %>
+              <%= image_tag contact.avatar, alt: "contact's portrait", class: "img-fluid" %>
+            <% else %>
+              <%= image_tag '/assets/avatar-placeholder.png', class: "img-fluid" %>
+            <% end %>
+          </td>
+          <td>
+            <h3><%= contact.first_name%></h3>
+          </td>
+          <td>
+            <h3><%= contact.last_name%></h3>
+          </td>
+          <td>
+            <h3><%= contact.email%></h3>
+          </td>
+          <td>
+            <h3><%= contact.phone_number%></h3>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>
