@@ -7,6 +7,7 @@
         <th scope="col">Last Name:</th>
         <th scope="col">Email:</th>
         <th scope="col">Phone Number:</th>
+        <th scope="col">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,10 @@
           </td>
           <td>
             <h3><%= contact.phone_number%></h3>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_contact_path(contact), class: "btn btn-outline-secondary" %>
+            <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>

@@ -1,0 +1,9 @@
+
+<% if @contact.avatar.present? == true %>
+  <%= image_tag @contact.avatar, alt: "contact's portrait", class: "img-fluid" %>
+<% else %>
+  <%= image_tag '/assets/avatar-placeholder.png', class: "img-fluid" %>
+<% end %>
+<h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+<h2>Phone Number: <%= @contact.phone_number %></h2>
+<h2>Email: <%= @contact.email %></h2>

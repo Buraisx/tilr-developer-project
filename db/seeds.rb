@@ -12,10 +12,11 @@ body = JSON.parse(res.body)
 group1 = Group.create!(name: "test group")
 
 body.each do |user|
-  Contact.create!(
-    first_name: user["name"],
-    last_name: "test",
+  new_contact = Contact.create!(
+    first_name: user["name"].split[0],
+    last_name: user["name"].split[1],
     email: user["email"],
     phone_number: user["phone"]
   )
+  new_contact.groups << group1
 end
