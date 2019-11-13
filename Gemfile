@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Carrierwave for image upload
 gem 'carrierwave', '~> 2.0'
+# Use Httparty for API calls 
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

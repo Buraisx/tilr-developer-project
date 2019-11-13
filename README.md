@@ -7,6 +7,9 @@ Running on `Rails 5.1.7`
 
 # POPULATING THE DATABASE
 
+
+# EXTERNAL SERVICES USED
+- Carrierwave
 # README
 
 This README would normally document whatever steps are necessary to get the

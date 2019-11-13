@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+res = HTTParty.get('https://jsonplaceholder.typicode.com/users')
+body = JSON.parse(res.body)
+
+group1 = Group.create!(name: "test group")
+
+body.each do |user|
+  Contact.create!(
+    first_name: user["name"],
+    last_name: "test",
+    email: user["email"],
+    phone_number: user["phone"]
+  )
+end
