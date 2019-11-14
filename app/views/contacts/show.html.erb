@@ -7,3 +7,6 @@
 <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
 <h2>Phone Number: <%= @contact.phone_number %></h2>
 <h2>Email: <%= @contact.email %></h2>
+
+<%= link_to 'Edit', edit_contact_path(@contact), class: "btn btn-outline-secondary" %>
+<%= link_to 'Delete', @contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

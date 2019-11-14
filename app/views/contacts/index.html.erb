@@ -1,9 +1,9 @@
 <header class="row">
-  <%= form_tag( new_contact_path, class: "form-inline col-10") do %>
+  <%= form_tag( new_contact_path, class: "form-inline col-8") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search based on name, email, phone number, or group", class: "form-control" %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  <%= link_to 'Add new contact', new_contact_path, class: "btn btn-outline-success" %>
+  <%= link_to 'Add new contact', new_contact_path, class: "btn btn-outline-success col-4" %>
 </header>
 <main class="row">
   <table class="table text-center">
