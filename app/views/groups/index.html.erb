@@ -1,4 +1,4 @@
-<%= render :layout => 'shared/header', :locals => {:title => "All groups"} do %>
+<%= render :layout => 'shared/header', :locals => {:title => "All groups", :prev_page => contacts_path} do %>
   <div class="col-6 header__button-group">
     <%= link_to 'Create new group', new_group_path, class: "btn btn-outline-success" %>
   </div>

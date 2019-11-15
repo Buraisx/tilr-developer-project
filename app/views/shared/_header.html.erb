@@ -1,7 +1,9 @@
 <header class="row header">
   <div class="col-6">
-    <%= link_to('javascript:history.back()', {class: "header__back-button"}) do %>
-      <i class="fa fa-chevron-left"></i>
+    <% if defined?(prev_page) %>
+      <%= link_to( prev_page , {class: "header__back-button"}) do %>
+        <i class="fa fa-chevron-left"></i>
+      <% end %>
     <% end %>
     <h2 class="header__title"><%= title -%></h2>
   </div>
