@@ -40,6 +40,9 @@ class ContactsController < ApplicationController
     redirect_to contacts_path
   end
 
+  def search
+    @found_contacts = Contact.search(params[:search]).order("first_name DESC")
+  end
 private
   def set_contact
     @contact = Contact.find(params[:id])
