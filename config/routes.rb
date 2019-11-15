@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'contacts#index'
   resources :contacts
   resources :groups
+
+  get '/search', to: 'contacts#search'
 end

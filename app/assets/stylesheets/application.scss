@@ -17,7 +17,6 @@
 @import 'bootstrap';
 
 .header {
-  background-color: white;
   padding: 2rem 0;
   // margin: 0 auto 2rem auto ;
   justify-content: space-between;
@@ -32,9 +31,58 @@
   &__search-bar{
     width: 100% !important;
   }
+  &__title{
+    display: inline;
+  }
+  &__back-button{
+    margin-right: 1rem;
+    &:hover{
+      text-decoration: none;
+    }
+  }
 }
 
+.mobile-hidden {
+  @media screen and (max-width: 970px){
+    display: none;
+  }
+}
+.form-inline {
+  flex-flow: row nowrap !important;
+}
 
-// main,body{
-//   // background-color: #2596BA; 
-// }
+.table {
+  &__avatar-container {
+    max-width: 150px;
+  }
+  &__row {
+    cursor: pointer;
+  }
+  &__button {
+    width: 100%;
+  }
+  th,td {
+    vertical-align: middle !important;
+    @media screen and (max-width: 575px){
+      padding: 12px 6px !important;
+    }
+  }
+}
+
+.list-group {
+  margin-bottom: 1rem;
+}
+
+.fa-chevron-left{
+  font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+body{
+  background-color: #FAFAFA;
+}
+
+label{
+  font-weight: bold;
+}

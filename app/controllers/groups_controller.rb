@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @contacts = @group.contacts
+    @contacts = @group.contacts.order("first_name ASC")
   end
 
   def new
@@ -15,12 +15,9 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      # flash[:success] = "Object successfully created"
       redirect_to group_path(@group)
     else
-      format.html { render :new }
-      # flash[:error] = "Something went wrong"
-      # render 'new'
+      redirect_to new_group_path
     end
   end  
 
