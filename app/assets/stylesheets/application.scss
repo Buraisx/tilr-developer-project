@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap';
+
+.header {
+  padding: 2rem 0;
+  // margin: 0 auto 2rem auto ;
+  justify-content: space-between;
+  &__button-group {
+    display:flex;
+    justify-content: flex-end;
+    margin: 0 auto 1rem auto ;
+    & > .btn:first-child {
+      margin-right: 15px; 
+    }
+  }
+  &__search-bar{
+    width: 100% !important;
+  }
+  &__title{
+    display: inline;
+  }
+  &__back-button{
+    margin-right: 1rem;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+.mobile-hidden {
+  @media screen and (max-width: 970px){
+    display: none;
+  }
+}
+.form-inline {
+  flex-flow: row nowrap !important;
+}
+
+.table {
+  &__avatar-container {
+    max-width: 150px;
+  }
+  &__row {
+    cursor: pointer;
+  }
+  &__button {
+    width: 100%;
+  }
+  th,td {
+    vertical-align: middle !important;
+    @media screen and (max-width: 575px){
+      padding: 12px 6px !important;
+    }
+  }
+}
+
+.list-group {
+  margin-bottom: 1rem;
+}
+
+.fa-chevron-left{
+  font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+body{
+  background-color: #FAFAFA;
+}
+
+label{
+  font-weight: bold;
+}

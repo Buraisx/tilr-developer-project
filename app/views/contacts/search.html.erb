@@ -1,0 +1,3 @@
+<%= render :layout => 'shared/header', :locals => {:title => 'Search', :prev_page => contacts_path} do %>
+<% end %>
+<%= render 'shared/display_contacts', contacts: @found_contacts %>

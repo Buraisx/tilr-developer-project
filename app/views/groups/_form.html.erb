@@ -1,0 +1,17 @@
+<%= form_with model: group do |form| %>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+      </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <label>Contacts</label>
+        <%= form.collection_select(:contact_ids, Contact.all, :id, :full_name, {}, {:multiple => true, :size => Contact.all.length, :class => "form-control form-contacts-list"}) %>
+      </div>
+    </li>
+  </ul>
+  <%= form.submit class: "btn btn-primary"%>
+<% end %>
