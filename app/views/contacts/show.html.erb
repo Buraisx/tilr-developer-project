@@ -1,5 +1,5 @@
 <%= render :layout => 'shared/header', :locals => {:title => ''} do %>
-  <div class="col-12 header__button-group">
+  <div class="col-6 header__button-group">
     <%= link_to 'Edit', edit_contact_path(@contact), class: "btn btn-outline-secondary" %>
     <%= link_to 'Delete', @contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
   </div>

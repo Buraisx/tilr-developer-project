@@ -1,3 +1,7 @@
 <%= render :layout => 'shared/header', :locals => {:title => @group.name} do %>
+  <div class="col-6 header__button-group">
+    <%= link_to 'Edit', edit_group_path(@group), class: "btn btn-outline-secondary" %>
+    <%= link_to 'Delete', @group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </div>
 <% end %>
 <%= render 'shared/display_contacts', contacts: @contacts %>
