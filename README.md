@@ -1,39 +1,23 @@
+William Situ
+Friday, Nov 15, 2019
+
+Contacts application for adding and removing contacts.
+Inspiration from my phone's phone app.
+
 Running on `Rails 5.1.7`
 
-# SETUP
+# REQUIRED 
 - Ruby
 - SQlite3
   - macs: `brew install sqlite3`
 
-# POPULATING THE DATABASE
-- `rails db:seed`
-- `rails db:migrate`
-
+# SETUP
+- `rails db:setup`
 - `bundle install`
 
-# EXTERNAL SERVICES USED
-- Carrierwave
-# README
+# STARTING UP
+- `rails s`
+- go to `localhost:3000`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# TESTING
+- `rails test`
