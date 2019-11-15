@@ -12,12 +12,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      # flash[:success] = "Object successfully created"
       redirect_to contact_path(@contact)
     else
-      format.html { render :new }
-      # flash[:error] = "Something went wrong"
-      # render 'new'
+      redirect_to new_contact_path
     end
   end
 
@@ -31,7 +28,7 @@ class ContactsController < ApplicationController
     if @contact.update_attributes(contact_params)
       redirect_to contact_path(@contact)
     else
-      redirect_to contact_path
+      redirect_to edit_contact_path(@contact)
     end
   end
   
