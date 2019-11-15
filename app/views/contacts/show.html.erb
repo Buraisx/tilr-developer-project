@@ -1,9 +1,35 @@
-
-<% if @contact.avatar.present? == true %>
-  <%= image_tag @contact.avatar, alt: "contact's portrait", class: "img-fluid" %>
-<% else %>
-  <%= image_tag '/assets/avatar-placeholder.png', class: "img-fluid" %>
-<% end %>
-<h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
-<h2>Phone Number: <%= @contact.phone_number %></h2>
-<h2>Email: <%= @contact.email %></h2>
+<header class="row">
+  <div>
+    <%= link_to 'Edit', edit_contact_path(@contact), class: "btn btn-outline-secondary" %>
+    <%= link_to 'Delete', @contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </div>
+</header>
+<main class="row">
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item text-center">
+        <% if @contact.avatar.present? == true %>
+          <%= image_tag @contact.avatar, alt: "contact's portrait", class: "img-fluid", style: "width:300px;"%>
+        <% else %>
+          <%= image_tag '/assets/avatar-placeholder.png', class: "img-fluid" %>
+        <% end %>
+      </li>
+      <li class="list-group-item text-center">
+        <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+      </li>
+      <li class="list-group-item">
+        <p><b>Phone Number:</b> <%= @contact.phone_number %></p>
+      <li class="list-group-item">
+        <p><b>Email:</b> <%= @contact.email %></p>
+      </li>
+      <li class="list-group-item">
+        <b>Groups:</b>
+        <ul>
+          <% @contact.groups.each do |group| %>
+            <li><%= group.name %></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</main>
