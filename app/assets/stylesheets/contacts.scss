@@ -2,30 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.mobile-hidden {
-  @media screen and (max-width: 970px){
-    display: none;
-  }
-}
-.form-inline {
-  flex-flow: row nowrap !important;
-}
-.table {
-  // background-color: white;
-  // border-radius: 10px;
-  &__avatar-container {
-    max-width: 150px;
-  }
-  &__row {
-    cursor: pointer;
-  }
-  &__button {
-    width: 100%;
-  }
-  th,td {
-    vertical-align: middle !important;
-    @media screen and (max-width: 575px){
-      padding: 12px 6px !important;
-    }
-  }
-}

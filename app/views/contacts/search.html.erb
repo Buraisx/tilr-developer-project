@@ -1,1 +1,3 @@
-<%= render 'layouts/display_contacts', contacts: @found_contacts %>
+<%= render :layout => 'shared/header', :locals => {:title => ''} do %>
+<% end %>
+<%= render 'shared/display_contacts', contacts: @found_contacts %>

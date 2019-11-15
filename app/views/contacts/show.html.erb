@@ -1,9 +1,10 @@
-<header class="row">
-  <div>
+<%= render :layout => 'shared/header', :locals => {:title => ''} do %>
+  <div class="col-12 header__button-group">
     <%= link_to 'Edit', edit_contact_path(@contact), class: "btn btn-outline-secondary" %>
     <%= link_to 'Delete', @contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
   </div>
-</header>
+<% end %>
+
 <main class="row">
   <div class="col-12">
     <ul class="list-group">
