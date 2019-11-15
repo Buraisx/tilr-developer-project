@@ -1,10 +1,7 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header {
-  margin: 2rem auto;
-  justify-content: space-between;
-}
+
 .mobile-hidden {
   @media screen and (max-width: 970px){
     display: none;
@@ -14,6 +11,8 @@ header {
   flex-flow: row nowrap !important;
 }
 .table {
+  // background-color: white;
+  // border-radius: 10px;
   &__avatar-container {
     max-width: 150px;
   }

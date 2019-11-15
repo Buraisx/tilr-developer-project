@@ -14,4 +14,27 @@
  *= require_self
  */
 
- @import 'bootstrap';
+@import 'bootstrap';
+
+.header {
+  background-color: white;
+  padding: 2rem 0;
+  // margin: 0 auto 2rem auto ;
+  justify-content: space-between;
+  &__button-group {
+    display:flex;
+    justify-content: flex-end;
+    margin: 0 auto 1rem auto ;
+    & > .btn:first-child {
+      margin-right: 15px; 
+    }
+  }
+  &__search-bar{
+    width: 100% !important;
+  }
+}
+
+
+// main,body{
+//   // background-color: #2596BA; 
+// }
