@@ -30,6 +30,12 @@
         <%= form.text_field :email, class: "form-control" %>
       </div>
     </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <label>Groups</label>
+        <%= form.collection_select(:group_ids, Group.all, :id, :name, {}, {:multiple => true, :size => Group.all.length, :class => "form-control"}) %>
+      </div>
+    </li>
   </ul>
   <%= form.submit class: "btn btn-primary"%>
 <% end %>

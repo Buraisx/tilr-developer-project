@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @groups = Group.all
   end
   
   def create
@@ -46,6 +47,6 @@ private
   end
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :phone_number, :email, :avatar)
+    params.require(:contact).permit(:first_name, :last_name, :phone_number, :email, :avatar, group_ids: [])
   end
 end
