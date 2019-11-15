@@ -1,8 +1,9 @@
-<header class="row header">
-  <div class="col-12 header__button_group">
+<%= render :layout => 'shared/header', :locals => {:title => "All groups"} do %>
+  <div class="col-6 header__button-group">
     <%= link_to 'Create new group', new_group_path, class: "btn btn-outline-success" %>
   </div>
-</header>
+<% end %>
+
 <main class="row">
   <div class="col-12">
     <table class="table text-center table-hover">

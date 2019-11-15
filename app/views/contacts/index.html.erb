@@ -1,5 +1,5 @@
 <%= render :layout => 'shared/header', :locals => {:title => "All contacts"} do %>
-  <div class="col-7 header__button-group">
+  <div class="col-6 header__button-group">
     <%= link_to 'View groups', groups_path, class: "btn btn-outline-warning" %>
     <%= link_to 'Add contact', new_contact_path, class: "btn btn-outline-success" %>
   </div>
@@ -8,4 +8,5 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 <% end %>
+
 <%= render 'shared/display_contacts', contacts: @contacts %>
