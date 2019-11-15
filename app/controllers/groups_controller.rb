@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @contacts = @group.contacts
+    @contacts = @group.contacts.order("first_name ASC")
   end
 
   def new

@@ -1,26 +1,30 @@
-<header class="row">
-  <%= link_to 'Create new group', new_group_path, class: "btn btn-outline-success" %>
+<header class="row header">
+  <div class="col-12 header__button_group">
+    <%= link_to 'Create new group', new_group_path, class: "btn btn-outline-success" %>
+  </div>
 </header>
 <main class="row">
-  <table class="table text-center">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Options</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @groups.each do |group| %>
+  <div class="col-12">
+    <table class="table text-center table-hover">
+      <thead>
         <tr>
-          <td>
-            <p><%= group.name %></p>
-          </td>
-          <td>
-            <%= link_to 'Edit', edit_group_path(group), class: "btn btn-outline-secondary" %>
-            <%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-          </td>
+          <th scope="col">Name</th>
+          <th scope="col">Options</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @groups.each do |group| %>
+          <tr data-link="<%= group_path(group) %>">
+            <td>
+              <p><%= group.name %></p>
+            </td>
+            <td>
+              <%= link_to 'Edit', edit_group_path(group), class: "btn btn-outline-secondary" %>
+              <%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </main>

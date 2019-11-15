@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.all.order("first_name ASC")
   end
 
   def new
@@ -41,7 +41,7 @@ class ContactsController < ApplicationController
   end
 
   def search
-    @found_contacts = Contact.search(params[:search]).order("first_name DESC")
+    @found_contacts = Contact.search(params[:search]).order("first_name ASC")
   end
 private
   def set_contact
